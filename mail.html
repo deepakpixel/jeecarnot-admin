@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input,
+        textarea {
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            /* height: 30px; */
+            padding: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .input-field {
+            padding: 20px;
+            width: 100%;
+        }
+
+        .sample {
+            background-color: #fff;
+        }
+
+        .left {
+            background-color: lightgrey;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .half {
+            height: 100vh;
+            min-width: 400px;
+            width: 50%;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="half left">
+            <div class="input-field">
+                <label for="to-email">From</label>
+                <input type="text" placeholder="e.g., xyz@example.com">
+            </div>
+
+            <div class="input-field">
+                <label for="from-email">To</label>
+                <input type="text" placeholder="e.g., xyz@example.com">
+            </div>
+
+            <div class="input-field">
+                <label for="from-email">Subject</label>
+                <input type="text" placeholder="e.g., xyz@example.com">
+            </div>
+
+            <div class="input-field">
+                <label for="from-email">Message</label>
+                <textarea name="" id="message" cols="30" rows="10" placeholder="Enter your message here"></textarea>
+            </div>
+
+            <button onclick="view()">VIEW</button>
+
+        </div>
+        <div class="half sample">
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function view() {
+
+        console.log('viewing')
+        let viewer = document.getElementsByClassName('sample')[0]
+        let message = document.getElementById('message').value
+        message = message.replace(/(?:\r\n|\r|\n)/g, '<br>').replace(/\s{2,2}/g, '&nbsp&nbsp');
+
+        let x =
+            `<table style="WIDTH: 440px" width="440" cellspacing="0" cellpadding="0" border="0">
+  <tbody> 
+  <tr>
+    <td style="FONT-SIZE: 10pt; FONT-FAMILY: Arial, sans-serif; WIDTH: 290px; PADDING-BOTTOM: 5px; line-height:13pt;" width="290" valign="top">	<strong>		<span style="FONT-SIZE: 18pt; FONT-FAMILY: Arial, sans-serif; COLOR: #06333f">JEECarnot </span>	</strong><br>	<span style="FONT-SIZE: 11pt; FONT-FAMILY: Arial, sans-serif; COLOR: #666666"></span>  </td>
+
+   
+    <td valign="top" width="150" align="right" style="width:150px">	<span>		<a href="https://jeecarnot.com" target="_blank" rel="noopener"><img border="0" alt="Logo" width="147" style="max-width:147px; height:auto; border:0;" src="https://jeecarnot.com/assets/images/logo-color-1.png"></a>			</span>  </td></tr>
+
+    <tr>
+      <td style="FONT-SIZE: 10pt; FONT-FAMILY: Arial, sans-serif; WIDTH: 440px; PADDING-TOP: 10px; line-height:10pt" valign="top" colspan="2">${message}</td></tr>
+        <br>
+
+  <tr>    <td colspan="2" style="padding-top:10px; BORDER-TOP: #06333f 1px solid; font-size:10pt">
+		<span style="color:#666666;"><strong style="color:#06333f;">Phone:</strong> +918239157525<br></span>	<span style="color:#666666;"><strong style="color:#06333f;">Email:</strong> team@jeecarnot.com</span>	</td>	</tr>
+  <tr>    <td style="font-size:10pt">				</td>	<td>&nbsp;</td></tr>
+  <tr>
+    <td style="line-height:12pt; FONT-SIZE: 9pt; FONT-FAMILY: Arial, sans-serif;" valign="bottom">	<span>		<a href="http://jeecarnot.com" target="_blank" rel="noopener" style=" text-decoration:none;"><strong style="color:#06333f; font-family:Arial, sans-serif;">jeecarnot.com</strong></a>			</span></td><td align="right">	<span><a href="https://www.facebook.com/jeecarnot" target="_blank" rel="noopener"><img border="0" width="13" alt="facebook icon" style="border:0; height:13px; width:13px" src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/stay-healthy-at-home1/fb.png"></a>&nbsp;&nbsp;</span>			<span><a href="https://www.linkedin.com/company/jeecarnot" target="_blank" rel="noopener"><img border="0" width="13" alt="linkedin icon" style="border:0; height:13px; width:13px" src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/stay-healthy-at-home1/ln.png"></a>&nbsp;&nbsp;</span>	<span><a href="https://www.instagram.com/jeecarnot/" target="_blank" rel="noopener"><img border="0" width="13" alt="instagram icon" style="border:0; height:13px; width:13px" src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/stay-healthy-at-home1/it.png"></a>&nbsp;&nbsp;</span>    </td></tr>
+  
+  
+  
+  <tr>
+    <td style="text-align:justify;FONT-SIZE: 8pt; FONT-FAMILY: Arial, sans-serif; WIDTH: 440px; COLOR: #c0c0c0; PADDING-TOP: 10px; line-height:10pt" valign="top" colspan="2">This e-mail message may contain confidential or legally privileged information and is intended only for the use of the intended recipient(s). Any unauthorized disclosure, dissemination, distribution, copying or the taking of any action in reliance on the information herein is prohibited. E mails are not secure and cannot be guaranteed to be error free as they can be intercepted, amended, or contain viruses. Anyone who communicates with us by e-mail is deemed to have accepted these risks. Carnot is not responsible for errors or omissions in this message and denies any responsibility for any damage arising from the use of e-mail. Any opinion and other statement contained in this message and any attachment are solely those of the author and do not necessarily represent those of the company.</td></tr></tbody></table>`;
+
+        viewer.innerHTML = x;
+
+        console.log(x)
+    }
+</script>

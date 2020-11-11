@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="script.js">
+    </script>
+    <script type="text/javascript" src="script2.js">
+    </script>
+    <script type="text/javascript"src="feedback.js">
+    </script>
+    <title></title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <span class="menu-collapsed" style="color:black ;font-weight:bold; font-size:25px;">JeeCarnot</span>
+            <span class="menu-collapsed" style="color:black;">ADMIN</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:black;" data-toggle="collapse"
+                        data-target=".navbar-collapse.show">Logout</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#" style="color:black ;" data-toggle="collapse"
+                        data-target=".navbar-collapse.show">Profile<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:black ;" data-toggle="collapse"
+                        data-target=".navbar-collapse.show">AdminName</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show"><img
+                            src="profile.png" style="border-radius:50%;" width="40px" height="40px" alt=""></a>
+                </li>
+
+                <!-- This menu is hidden in bigger devices with d-sm-none.
+           The sidebar isn't proper for smaller screens imo, so this dropdown menu can keep all the useful sidebar itens exclusively for smaller screens  -->
+                <li class="nav-item dropdown d-sm-block d-md-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenu" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" >
+                        <a class="dropdown-item" href="#">Dashboard</a>
+                        <a class="dropdown-item" href="#">Feedbacks</a>
+                        <a class="dropdown-item" href="#">Send Mail</a>
+                    </div>
+                </li>
+                <!-- Smaller devices menu END -->
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row" id="body-row">
+        <!-- Sidebar -->
+        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block col-2">
+            <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+            <!-- Bootstrap List Group -->
+            <ul class="list-group sticky-top sticky-offset">
+                <!-- Separator with title -->
+                <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                </li>
+                <!-- /END Separator -->
+                <!-- Menu with submenu -->
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed">Dashboard</span>
+                    </div>
+                </a>
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed">Feedback<span>
+                    </div>
+                </a>
+                <a href="sendmail.html" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed">Send Mail<span>
+                    </div>
+                </a>
+
+            </ul>
+            <!-- List Group END-->
+        </div>
+        <!-- sidebar-container END -->
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Feedbacks</h1>
+
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-5">
+                        <span>Filters</span>
+                        <button type="button" class="btn btn-light btn-sm">Pending</button>
+                        <button type="button" class="btn btn-secondary btn-sm ">Resolved</button>
+                        <button type="button" class="btn btn-danger btn-sm ">Critical</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="demo">
+
+            </div>
+    </div>
+
+    <script type="text/javascript">
+
+    function printRating(x){
+      if(x===1){
+        return `<span class="rating-number">(${x})</span>
+          <i class="fas fa-frown" style="color:red;"></i>`
+      }else if(x===2){
+        return `<span class="rating-number">(${x})</span>
+          <i class="fas fa-frown-open" style="color:orange;"></i>`
+      }else if(x===3){
+        return `<span class="rating-number">(${x})</span>
+          <i class="fas fa-meh" style="color:#EEC80D;"></i>`
+      }else if(x===4){
+        return `<span class="rating-number">(${x})</span>
+          <i class="fas fa-smile" style="color:#A5F10A;"></i>`
+      }else{
+        return `<span class="rating-number">(${x})</span>
+          <i class="fas fa-grimace" style="color:#089809;"></i>`
+      }
+    }
+
+    function printStatus(y){
+      return `<div class="${y}"><span>${y}</span></div>`
+    }
+
+    let r
+
+    function toggle_visibility(e) {
+        r = e.parentNode.previousElementSibling
+        if (e.parentNode.previousElementSibling.style.display == 'block') {
+            e.parentNode.previousElementSibling.style.display = 'none';
+            e.innerHTML = "Full Feedback";
+        } else {
+            e.parentNode.previousElementSibling.style.display = 'block';
+            e.innerHTML = "Show Less";
+        }
+    }
+
+
+
+
+
+    let i;
+let j = '';
+    for (i = 0; i < 10; i++) {
+          j = `
+
+          <div class="row" id="content${obj[i].feedbackId}" style="border:1px solid black; margin:20px; background-color:#fff;">
+          <div class="col-lg-6 col-lg-offset-2">
+          ${printStatus(obj[i].status)}
+          <img src="profile.png" class="rounded-circle" alt="" height="84px" width="80px"
+          style="margin-top:5px; float:left">
+          <div class="mentee" style="float:left; padding-left: 30px; line-height:1.5rem;padding-top:25px;">
+          <p >Name:<span>${obj[i].name}<span></p>
+          <p>Feedback date:<span>${obj[i].feedbackDate}</span></p>
+          </div>
+          </div>
+          <div class="col-lg-6 col-lg-offset-2">
+          <img src="profile.png" class="rounded-circle" alt="" height="84px" width="80px"
+          style="margin-top: 5px; float:left;">
+          <div class="mentee" style="float:left; padding-left: 30px; line-height:1.5rem;padding-top:25px;">
+          <p>Mentor</p>
+          <span>${obj[i].mentorName}</span>
+          </div>
+          </div>
+          <div class="col-lg-12" style="margin-top:20px;">
+          <div class="paragraph">
+          <h5>Level of comfort</h5>
+          <p>Level of effort by mentee<span style="margin-left:3px;">${printRating(obj[i].feedback.effort[0])}</span></p>
+          <p>Level of effort by mentor<span style="margin-left:3px;">${printRating(obj[i].feedback.effort[1])}</span></p>
+          </div>
+          </div>
+          <br />
+          <br />
+
+          <div id="foo" style="display:none;">
+
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>Contribution to learning</h5>
+            <p>Are you satisfied with our services<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[0])}</span></p>
+            <p>Level of maths assignment/notes<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[1])}</span></p>
+            <p>Level of physics assignment/notes<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[2])}</span></p>
+            <p>Level of chemistry assignment/notes<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[3])}</span></p>
+            <p>Are you doing the assigned work on time<span style="margin-left:3px;">${printRating(obj[i].feedback.cont[4])}</span></p>
+          </div>
+          </div>
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>How much do you agree with these points?</h5>
+            <p>Your mentor is supportive<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[0])}</span></p>
+            <p>Your mentor is able to solve the queries<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[1])}</span></p>
+            <p>Your mentor is helping you in chosing the right material<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[2])}</span></p>
+            <p>Your mentor is able to motivate you to work hard<span style="margin-left:3px;">${printRating(obj[i].feedback.mentor[3])}</span></p>
+          </div>
+          </div>
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>Rate mentor abilities</h5>
+            <p>Mentor talks to me regularly<span style="margin-left:3px;">${printRating(obj[i].feedback.resp[0])}</span></p>
+            <p>Mentor makes me feel relaxed and helps me to focus on studies<span style="margin-left:3px;">${printRating(obj[i].feedback.resp[1])}</span></p>
+            <p>Rate your mentor capabilities of handling difficult situations and giving you a feasible solution<span style="margin-left:3px;">${printRating(obj[i].feedback.resp[2])}</span></p>
+          </div>
+          </div>
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>How well is carnot able to make your preparation journey smooth and easy? </h5>
+            <span><span style="margin-left:3px;">${printRating(obj[i].feedback.carnot)}</span></span>
+            </div>
+          </div>
+          <div class="col-lg-12">
+          <div class="paragraph comment">
+            <h5 >Comment</h5>
+            <p>${obj[i].feedback.comment}
+            </p>
+
+          </div>
+          </div>
+
+          <div class="col-lg-12">
+          <div class="paragraph">
+            <h5>Would you recommend carnot to your friends?</h5>
+            <span>${obj[i].feedback.recom}</span>
+          </div>
+          </div>
+          <div class="shift" style="position:relative; left:76%;">
+          <button type="button" class="btn btn-danger btn-sm position-sticky" onclick="deleteText(${obj[i].feedbackId})">Critical</button>
+          <button type="button" id="removebtn" class="btn btn-secondary btn-sm position-sticky" onclick="deleteText(${obj[i].feedbackId})">Resolved</button>
+          </div>
+          <br />
+          </div>
+          <span style="size:4em;margin:0px 0px 10px 10px; top:-5%;"><button onclick="toggle_visibility(this);"
+          type="button" class="btn btn-secondary pull-right" id="see${i}"+>Full Feedback</button></span>
+          </div>`;
+
+
+          var newDiv= document.createElement("div");
+
+          newDiv.innerHTML=j;
+
+          document.getElementById("demo").append(newDiv);
+
+      }
+
+
+
+      function deleteText(x){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'sample.txt', true);
+
+
+
+        xhr.onload=function(){
+          if(this.status== 200){
+            var el=document.getElementById("content"+x);
+            el.remove();
+          }
+        }
+
+
+        xhr.onerror=function(){
+          console.log("Error...");
+        }
+
+        xhr.send();
+
+      }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

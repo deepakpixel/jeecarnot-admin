@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="file-upload-with-preview.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="script.js">
+    </script>
+    <script type="text/javascript"src="feedback.js">
+    </script>
+    <title></title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <span class="menu-collapsed" style="color:black ;font-weight:bold; font-size:25px;">JeeCarnot</span>
+            <span class="menu-collapsed" style="color:black;">ADMIN</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:black;" data-toggle="collapse"
+                        data-target=".navbar-collapse.show">Logout</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#" style="color:black ;" data-toggle="collapse"
+                        data-target=".navbar-collapse.show">Profile<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:black ;" data-toggle="collapse"
+                        data-target=".navbar-collapse.show">AdminName</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show"><img
+                            src="profile.png" style="border-radius:50%;" width="40px" height="40px" alt=""></a>
+                </li>
+
+                <!-- This menu is hidden in bigger devices with d-sm-none.
+           The sidebar isn't proper for smaller screens imo, so this dropdown menu can keep all the useful sidebar itens exclusively for smaller screens  -->
+                <li class="nav-item dropdown d-sm-block d-md-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenu" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" >
+                        <a class="dropdown-item" href="#">Dashboard</a>
+                        <a class="dropdown-item" href="#">Feedbacks</a>
+                        <a class="dropdown-item" href="#">Send Mail</a>
+                    </div>
+                </li>
+                <!-- Smaller devices menu END -->
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row" id="body-row">
+        <!-- Sidebar -->
+        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block col-2">
+            <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+            <!-- Bootstrap List Group -->
+            <ul class="list-group sticky-top sticky-offset">
+                <!-- Separator with title -->
+                <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                </li>
+                <!-- /END Separator -->
+                <!-- Menu with submenu -->
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed">Dashboard</span>
+                    </div>
+                </a>
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed">Feedback<span>
+                    </div>
+                </a>
+
+                <a href="sendmail.html" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed">Send Mail<span>
+                    </div>
+                </a>
+
+            </ul>
+            <!-- List Group END-->
+        </div>
+        <!-- sidebar-container END -->
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4" style="margin-top:20px;">
+
+        <div class="row" style="border:1px solid #d3d3d3; margin:20px; background-color:#fff; border-radius:8px;">
+      <div class="col-md-6 col-md-offset-3" id="form_container">
+          <h2>Contact Us</h2>
+          <p>
+             Please send your message below. We will get back to you at the earliest!
+          </p>
+          <form role="form" method="post" id="reused_form" enctype="multipart/form-data">
+
+              <div class="row">
+                  <div class="col-sm-12 form-group">
+                      <label for="from-email">
+                          From:</label>
+                      <input type="email" class="form-control" id="from-email" name="from" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 form-group">
+                      <label for="to-email">
+                          To:</label>
+                      <input type="email" class="form-control" id="to-email" name="to" required>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="subject">
+                        Subject:</label>
+                    <input type="text" class="form-control" id="subject" name="subject" >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="message">
+                        Message:</label>
+                    <textarea class="form-control" type="textarea" name="message" id="message" maxlength="6000" rows="7"></textarea>
+                </div>
+            </div>
+
+
+              <div style="width:400px; margin:20px;">
+                <div class="custom-file-container" data-upload-id="myupload">
+                  <label >Upload Files <a href="javascript:void(0)" class="custom-file-container__image-clear">&times;</a> </label>
+
+                  <label class="custom-file-container__custom-file" for="inpFile">
+                    <input type="file" id="inpFile" class="custom-file-container__custom-file" accept="*" multiple aria-label="Multiple Select Files">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760">
+                    <span class="custom-file-container__custom-file__custom-file-control"></span>
+                  </label>
+
+                  <div class="custom-file-container__image-preview" style="overflow:hidden ; height: auto;">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12 form-group">
+                      <button type="submit" class="btn btn-lg btn-secondary btn-default pull-right" id="btnUpload" onclick="successSubmit(this)">Send </button>
+                  </div>
+              </div>
+
+
+
+          </form>
+          <!-- <div id="success_message" style="width:100%; height:100%; display:none; ">
+              <h3>Posted your message successfully!</h3>
+          </div>
+          <div id="error_message"
+                  style="width:100%; height:100%; display:none; ">
+                      <h3>Error</h3>
+                      Sorry there was an error sending your form.
+
+          </div> -->
+      </div>
+  </div>
+
+</main>
+<script src="file-upload-with-preview.min.js">
+</script>
+<script>
+  var upload = new FileUploadWithPreview('myupload')
+</script>
+<script>
+
+
+
+
+const form={
+  to:document.getElementById('to-email'),
+  from:document.getElementById('from-email'),
+  subject:document.getElementById('subject'),
+  message:document.getElementById('message'),
+}
+
+
+  function successSubmit(x) {
+    const inpFile=document.getElementById('inpFile');
+    const formData=new FormData();
+    const xhr= new XMLHttpRequest();
+
+    xhr.open("post","sample.txt", true);
+
+    xhr.onload=function(){
+      if(this.status== 200){
+        for(const file of inpFile.files){
+          formData.append("myFiles[]", file);
+        }
+      }
+    }
+
+    xhr.onerror=function(){
+      console.log("Error...");
+    }
+    xhr.send(formData);
+  }
+</script>
+<script>
+window.addEventListener( 'load', function () {
+  const to = document.getElementById( "to-email" );
+  const from = document.getElementById( "from-email" );
+  const subject = document.getElementById( "subject" );
+  const message = document.getElementById( "message" );
+  const file = {
+        dom    : document.getElementById( "inpFile" ),
+        binary : null
+      };
+  const reader = new FileReader();
+  reader.addEventListener( "load", function () {
+    file.binary = reader.result;
+  } );
+  if( file.dom.files[0] ) {
+    reader.readAsBinaryString( file.dom.files[0] );
+  }
+  file.dom.addEventListener( "change", function () {
+    if( reader.readyState === FileReader.LOADING ) {
+      reader.abort();
+    }
+
+    reader.readAsBinaryString( file.dom.files[0] );
+  } );
+
+  function sendData() {
+    // If there is a selected file, wait it is read
+    // If there is not, delay the execution of the function
+    if( !file.binary && file.dom.files.length > 0 ) {
+      setTimeout( sendData, 10 );
+      return;
+    }
+
+    const XHR = new XMLHttpRequest();
+
+    // We need a separator to define each part of the request
+    const boundary = "blob";
+
+    // Store our body request in a string.
+    let data = "";
+
+    // So, if the user has selected a file
+    if ( file.dom.files[0] ) {
+      // Start a new part in our body's request
+      data += "--" + boundary + "\r\n";
+
+      // Describe it as form data
+      data += 'content-disposition: form-data; '
+      // Define the name of the form data
+            + 'name="'         + file.dom.name          + '"; '
+      // Provide the real name of the file
+            + 'filename="'     + file.dom.files[0].name + '"\r\n';
+      // And the MIME type of the file
+      data += 'Content-Type: ' + file.dom.files[0].type + '\r\n';
+
+      // There's a blank line between the metadata and the data
+      data += '\r\n';
+
+      // Append the binary data to our body's request
+      data += file.binary + '\r\n';
+    }
+
+
+    data += "--" + boundary + "\r\n";
+
+    data += 'content-disposition: form-data; To="' + to.name + '"\r\n';
+
+    data += '\r\n';
+
+    data += to.value + "\r\n";
+
+    data += 'content-disposition: form-data; From="' + from.name + '"\r\n';
+
+    data += '\r\n';
+
+    data += from.value + "\r\n";
+
+
+    data += 'content-disposition: form-data; Subject="' + subject.name + '"\r\n';
+
+    data += '\r\n';
+
+    data += subject.value + "\r\n";
+
+    data += "--" + boundary + "--";
+
+    data += 'content-disposition: form-data; Message="' + message.name + '"\r\n';
+
+    data += '\r\n';
+
+
+    data += message.value + "\r\n";
+
+
+    // Define what happens on successful data submission
+    XHR.addEventListener( 'load', function( event ) {
+      alert( 'Yeah! Data sent and response loaded.' );
+    } );
+
+    // Define what happens in case of error
+    XHR.addEventListener( 'error', function( event ) {
+      alert( 'Oops! Something went wrong.' );
+    } );
+
+    // Set up our request
+    XHR.open( 'POST', 'sample.txt' );
+
+    // Add the required HTTP header to handle a multipart form data POST request
+    XHR.setRequestHeader( 'Content-Type','multipart/form-data; boundary=' + boundary );
+
+    // And finally, send our data.
+    XHR.send( data );
+  }
+
+  // Access our form...
+  const form = document.getElementById( "myform" );
+
+  // ...to take over the submit event
+  form.addEventListener( 'submit', function ( event ) {
+    event.preventDefault();
+    sendData();
+  } );
+} );
+
+
+</script>
+
+    </body>
+
+    </html>

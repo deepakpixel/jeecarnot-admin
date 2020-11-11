@@ -1,0 +1,23 @@
+############## 1 ##############
+When page loads a request will be made to fetch first 20, a JSON object will be received with all the feedback information. Now it will be rendered using JavaScript.
+
+For now leave the server part assume that JSON is already stored in a JavaScript variable.
+
+Sample response JSON is in feedback.json
+
+############## 2 ##############
+Add a label wheather feedback is resolved, critical, pending
+
+############## 3 ##############
+instead of hardcoding keys store them in a variable
+eg. instead of jsonObj.feedback.effort[0]
+    or  jsonObj.feedback.effort[0]
+
+    use
+
+        const  feedback="feedback"
+        const contribution="cont"
+
+        jsonObj[feedback][contribution][0]
+
+        Why do so? Maybe we have to change the keys to make them little more self explainatory. In that case you wont have to change it throughout the code just change the variables.
